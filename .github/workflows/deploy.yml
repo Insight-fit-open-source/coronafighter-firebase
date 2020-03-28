@@ -35,8 +35,13 @@ jobs:
       - name: Install firebase tools
         run: npm i -g firebase-tools
 
-      - name: Build ts
-        run: npm run --prefix functions build
+      - name: Use Production
+        run: firebase use production --token ${{ secrets.FIREBASE_TOKEN }}
+        if: github.ref == 'refs/heads/master'
+
+      - name: Use Staging
+        run: firebase use staging --token ${{ secrets.FIREBASE_TOKEN }}
+        if: github.ref == 'refs/heads/development'
 
       - name: Deploy to Firebase
-        run: firebase deploy --token ${{ secrets.FIREBASE_STAGING_TOKEN }}
+        run: firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}

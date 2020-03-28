@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "corona-se-push-staging"
+    "default": "corona-se-push-staging",
+    "staging": "corona-se-push-staging",
+    "production": "corona-se-push"
   }
 }

@@ -1,0 +1,42 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - development
+      - master
+
+jobs:
+  firebase:
+    name: deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-${{ env.cache-name }}
+            ${{ runner.os }}-node-
+            ${{ runner.os }}-
+
+      - name: Install Dependencies
+        run: npm --prefix functions ci
+
+      - name: Install firebase tools
+        run: npm i -g firebase-tools
+
+      - name: Build ts
+        run: npm run --prefix functions build
+
+      - name: Deploy to Firebase
+        run: firebase deploy --token ${{ secrets.FIREBASE_STAGING_TOKEN }}

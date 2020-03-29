@@ -1,5 +1,7 @@
 import * as functions from 'firebase-functions';
 
-export default functions.https.onCall((data, context) => {
-  return { response: 'pong'}
+export default functions.https.onRequest((req, res) => {
+  return res
+    .status(200)
+    .send({ response: 'pong' })
 });

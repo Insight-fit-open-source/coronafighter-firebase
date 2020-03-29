@@ -1,6 +1,10 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+    match /dashboard/{document=**} {
+      allow read;
+    }
+
     match /screenings/{userId} {
       allow create, read, write, update: if request.auth.uid == userId;
     }

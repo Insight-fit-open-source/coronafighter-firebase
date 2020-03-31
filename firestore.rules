@@ -8,5 +8,17 @@ service cloud.firestore {
     match /surveyResponses/{userId}/{document=**} {
       allow create, read, write, update: if request.auth.uid == userId;
     }
+
+    match /profiles/{userId}/{document=**} {
+      allow read, write, update: if request.auth.uid == userId;
+    }
+
+    match /daily/{document=**} {
+      allow read;
+    }
+
+    match /cumulative/{document=**} {
+      allow read;
+    }
   }
 }

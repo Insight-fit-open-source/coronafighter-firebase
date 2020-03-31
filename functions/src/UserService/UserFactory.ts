@@ -9,7 +9,7 @@ class UserFactory {
    * Create the default user account
    */
   static createAccount (): User {
-    const now = moment().toISOString()
+    const now = moment().unix().toString()
 
     return {
       onBoardingComplete: false,

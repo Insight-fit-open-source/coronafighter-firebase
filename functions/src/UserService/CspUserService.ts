@@ -1,6 +1,6 @@
 import { UserService } from './types/UserService'
 import { UserRepository } from './types/UserRepository'
-import { UserFactory } from 'src/UserService/UserFactory'
+import { UserFactory } from './UserFactory'
 
 /**
  * Handles user auth related events

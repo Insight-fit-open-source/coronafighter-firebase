@@ -23,7 +23,7 @@ class CspDashboardRepository implements DashboardRepository {
   ingestCumulativeData (data: object): Promise<void> {
     return this.firestore.collection('cumulative')
       .doc('za')
-      .set(data)
+      .set({ data })
       .then(() => null)
   }
 }

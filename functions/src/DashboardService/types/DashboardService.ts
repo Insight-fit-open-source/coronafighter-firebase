@@ -3,9 +3,14 @@
  */
 interface DashboardService {
   /**
-   * Fetches and ingests data for the dashboard
+   * Fetches and ingests daily data for the dashboard
    */
-  ingest (): Promise<void>;
+  ingestDaily (): Promise<void>;
+
+  /**
+   * Fetches and ingests cumulative data for the dashboard
+   */
+  ingestCumulativeData (): Promise<void>;
 }
 
 export { DashboardService }

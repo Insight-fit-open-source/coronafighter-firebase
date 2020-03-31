@@ -2,7 +2,8 @@ import Axios, { AxiosRequestConfig, AxiosInstance } from 'axios'
 import { Configuration } from 'src/types/Configuration'
 import { DashboardDataClient } from '../types/DashboardDataClient'
 
-const DATA_PATH = 'covid.php'
+const DAILY_DATA_PATH = 'covid.php'
+const CUMULATIVE_DATA_PATH = 'graph.php'
 
 /**
  * Fetches data for the dashboard
@@ -34,8 +35,13 @@ class BlakeyClient implements DashboardDataClient {
     this.client = Axios.create(config)
   }
 
-  fetch (): Promise<object> {
-    return this.client.get(DATA_PATH)
+  fetchDailyData (): Promise<object> {
+    return this.client.get(DAILY_DATA_PATH)
+      .then(response => response.data)
+  }
+
+  fetchCumulativeData (): Promise<object> {
+    return this.client.get(CUMULATIVE_DATA_PATH)
       .then(response => response.data)
   }
 }

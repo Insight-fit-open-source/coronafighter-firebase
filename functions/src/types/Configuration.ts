@@ -9,7 +9,7 @@ interface Configuration {
   }
   // Dashboard related configuration
   dashboard: {
-    // The URL to fetch the dashboard data from
+    // The URL to fetchDailyData the dashboard data from
     source: string
     // The timeout for the dashboard data request in milliseconds
     timeout: number

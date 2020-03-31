@@ -3,9 +3,14 @@
  */
 interface DashboardDataClient {
   /**
-   * Fetch dashboard data
+   * Fetch daily dashboard data
    */
-  fetch(): Promise<object>;
+  fetchDailyData(): Promise<object>;
+
+  /**
+   * Fetch cumulative dashboard data
+   */
+  fetchCumulativeData(): Promise<object>;
 }
 
 export { DashboardDataClient }

@@ -3,10 +3,16 @@
  */
 interface DashboardRepository {
   /**
-   * Store data related to the dashboard.
+   * Store daily data related to the dashboard.
    * @param data Arbitrary data. Intentionally vague while the data structure is unknown.
    */
-  ingest (data: object): Promise<void>;
+  ingestDailyData (data: object): Promise<void>;
+
+  /**
+   * Store cumulative data related to the dashboard
+   * @param data Arbitrary data. Intentionally vague while the data structure is unknown.
+   */
+  ingestCumulativeData (data: object): Promise<void>;
 }
 
 export { DashboardRepository }

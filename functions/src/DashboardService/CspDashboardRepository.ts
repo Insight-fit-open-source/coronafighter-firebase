@@ -10,8 +10,18 @@ class CspDashboardRepository implements DashboardRepository {
   /**
    * @inheritDoc
    */
-  ingest(data: object): Promise<void> {
+  ingestDailyData(data: object): Promise<void> {
     return this.firestore.collection('dashbaord')
+      .doc('za')
+      .set(data)
+      .then(() => null)
+  }
+
+  /**
+   * @inheritDoc
+   */
+  ingestCumulativeData (data: object): Promise<void> {
+    return this.firestore.collection('cumulative')
       .doc('za')
       .set(data)
       .then(() => null)

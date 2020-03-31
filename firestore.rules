@@ -5,7 +5,7 @@ service cloud.firestore {
       allow read;
     }
 
-    match /screenings/{userId} {
+    match /surveyResponses/{userId}/{document=**} {
       allow create, read, write, update: if request.auth.uid == userId;
     }
   }

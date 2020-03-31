@@ -1,4 +1,5 @@
 import ping from './ping';
-import dashboardIngest from './dashboardIngest'
+import ingestDailyDashboardData from './ingestDailyDashboardData'
+import ingestCumulativeDashboardData from './ingestCumulativeDashboardData'
 
-export { ping, dashboardIngest };
+export { ping, ingestDailyDashboardData, ingestCumulativeDashboardData };

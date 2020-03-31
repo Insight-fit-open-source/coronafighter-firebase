@@ -11,9 +11,14 @@ class CspDashboardService implements DashboardService {
   /**
    * @inheritDoc
    */
-  ingest (): Promise<void> {
-    return this.dashboardDataClient.fetch()
-      .then(data => this.dashboardRepository.ingest(data))
+  ingestDaily (): Promise<void> {
+    return this.dashboardDataClient.fetchDailyData()
+      .then(data => this.dashboardRepository.ingestDailyData(data))
+  }
+
+  ingestCumulativeData (): Promise<void> {
+    return this.dashboardDataClient.fetchCumulativeData()
+      .then(data => this.dashboardRepository.ingestCumulativeData(data))
   }
 }
 

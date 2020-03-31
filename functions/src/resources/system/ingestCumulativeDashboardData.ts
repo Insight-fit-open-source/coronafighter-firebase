@@ -4,7 +4,7 @@ import { DashboardService } from '../..//DashboardService'
 
 const dashboardService = container.resolve('dashboardService') as DashboardService
 
-export default functions.pubsub.schedule('every 1 hour').onRun(() => {
+export default functions.pubsub.schedule('0 * * * *').onRun(() => {
   console.log('Updating cumulative data')
 
   return dashboardService.ingestCumulativeData()

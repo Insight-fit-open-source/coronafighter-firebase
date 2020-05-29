@@ -1,6 +1,13 @@
+import emailTrigger from './emailTrigger';
+import ingestCumulativeDashboardData from './ingestCumulativeDashboardData';
+import ingestDailyDashboardData from './ingestDailyDashboardData';
+import initialiseUser from './initialiseUser';
 import ping from './ping';
-import ingestDailyDashboardData from './ingestDailyDashboardData'
-import ingestCumulativeDashboardData from './ingestCumulativeDashboardData'
-import initialiseUser from './initialiseUser'
 
-export { ping, ingestDailyDashboardData, ingestCumulativeDashboardData, initialiseUser };
+export {
+  ping,
+  ingestDailyDashboardData,
+  ingestCumulativeDashboardData,
+  initialiseUser,
+  emailTrigger,
+};

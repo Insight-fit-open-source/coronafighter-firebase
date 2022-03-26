@@ -39,7 +39,7 @@
     "chai-as-promised": "^7.1.1",
     "firebase-functions-test": "^0.1.6",
     "firebase-tools": "^7.16.1",
-    "minimist": ">=1.2.2",
+    "minimist": ">=1.2.6",
     "mocha": "^7.0.1",
     "mock-cloud-firestore": "^0.11.0",
     "nodemon": "^2.0.2",

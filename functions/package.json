@@ -40,7 +40,7 @@
     "firebase-functions-test": "^0.1.6",
     "firebase-tools": "^7.16.1",
     "minimist": ">=1.2.2",
-    "mocha": "^7.0.1",
+    "mocha": "^10.2.0",
     "mock-cloud-firestore": "^0.11.0",
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
